@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bulldog Reservations</title>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="reservations.html">Reservations</a>
+    </nav>
+    <h1>Reservations</h1>
+    <p></p>
+    <form action="">
+        <label> Full Name:
+            <input type="text" name="name" required maxlength="20">
+        </label>
+        <label> Email:
+            <input type="email" name="email" required>
+        </label>
+        <label> Party Size:
+            <input type="number" name="party_size" min="1" max="8">
+        </label>
+        <label> Date:
+            <input type="date" name="date" required>
+        </label>
+        <label> Time:
+            <input type="time" name="time" required>
+        </label>
+        <label> Seating Preference
+            <input type="radio" name="seating_pref" value="Indoor" checked> Indoor
+            <input type="radio" name="seating_pref" value="Outdoor"> Outdoor
+            <input type="radio" name="seating_pref" value="Kennel"> Kennel
+        </label>
+        <label> Dietary Restrictions:
+            <input type="text" name="dietary_notes" maxlength="30">
+        </label>
+        <label> Would you like to opt in to our newsletter?
+            <input type="checkbox" name="newsletter_opt_in">
+        </label>
+        <label>
+            <button type="submit">Submit</button>
+        </label>
+        <label>
+            <button type="reset">Reset Form</button>
+        </label>
+
+
+    </form>
+</body>
+</html>
