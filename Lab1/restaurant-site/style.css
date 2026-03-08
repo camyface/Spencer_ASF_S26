@@ -1,10 +1,11 @@
 :root {
     /*Colors */
-    --deep-forest: #0F2A1D;
-    --sandstone: #E8E1D6;
-    --ivory: #FAF7F2;
-    --gold-accent: #C8A96A;
-    --charcoal: #1A1A1A;
+
+    --deep-forest: #0F2A1D; /*background/header*/
+    --sandstone: #E8E1D6; /*various*/
+    --ivory: #FAF7F2;  /*text, backgrounds*/
+    --gold-accent: #C8A96A;  /*borders, dividers, and hover fills*/
+    --charcoal: #1A1A1A;  /*text*/
 }
 
 .playfair-display {
@@ -330,3 +331,5 @@ fieldset input {
     margin-right: 6px;
     margin-left: 10px;
 }
+
+/*font awesome used to add instagram logo in nav bar*/
