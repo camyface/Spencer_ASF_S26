@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bulldog Reservations</title>
+    <title>Arbor Reservations</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/29dbcd0e0c.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,35 +22,53 @@
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="reservations.html">Reservations</a>
+        <!--        I use font awesome in my nav bar!!!-->
+        <i class="fa-brands fa-instagram"></i>
     </nav>
 
+</div>
+<div class="div div-block">
+    <p class="div-block-content">Reservations are accepted by request to ensure every
+    guest receives the highest level of attention and service.
+     By carefully managing each evening's seating, we create a
+    relaxed and intimate dining atmosphere where every detail,
+    from table placement to timing of courses, can be thoughtfully
+    prepared. This approach allows us to maintain the calm, elegant
+    experience that defines our restaurant.</p>
 </div>
     <p></p>
     <form action="" id="reservation">
         <label> Full Name:
-            <input type="text" name="name" required maxlength="20">
+            <input class="reservation-input" type="text" name="name" required maxlength="20">
         </label>
         <label> Email:
-            <input type="email" name="email" required>
+            <input class="reservation-input" type="email" name="email" required>
         </label>
         <label> Party Size:
-            <input type="number" name="party_size" min="1" max="8">
+            <input class="reservation-input" type="number" name="party_size" min="1" max="8">
         </label>
         <label> Date:
-            <input type="date" name="date" required>
+            <input class="reservation-input" type="date" name="date" required>
         </label>
         <label> Time:
-            <input type="time" name="time" required>
+            <input class="reservation-input" type="time" name="time" required>
         </label>
 
         <label> Dietary Restrictions:
-            <input type="text" name="dietary_notes" maxlength="30">
+            <textarea class="reservation-input" name="dietary_notes" id="" cols="5" rows="5"></textarea>
+<!--            <input class="reservation-input" type="text" name="dietary_notes" maxlength="30">-->
         </label>
         <label> Would you like to opt in to our newsletter?
-            <input type="checkbox" name="newsletter_opt_in">
+            <input class="reservation-input" type="checkbox" name="newsletter_opt_in">
         </label>
+    <fieldset form="reservation">
+        <legend>Seating Preference</legend>
+        <input type="radio" name="seating_pref" id="" value="indoor"> Indoor
+        <input type="radio" name="seating_pref" value="outdoor"> Outdoor
+        <input type="radio" name="seating_pref"  value="terrace"> Terrace
+    </fieldset>
         <label>
-            <button type="submit">Submit</button>
+            <button  type="submit">Submit</button>
         </label>
         <label>
             <button type="reset">Reset Form</button>
@@ -57,11 +77,5 @@
 
     </form>
 
-    <fieldset form="reservation">
-        <legend>Seating Preference</legend>
-        <input type="radio" name="seating_pref" id="" value="indoor"> Indoor
-        <input type="radio" name="seating_pref" value="outdoor"> Outdoor
-        <input type="radio" name="seating_pref"  value="kennel"> Kennel
-    </fieldset>
 </body>
 </html>

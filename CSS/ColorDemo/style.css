@@ -1,0 +1,51 @@
+:root {
+    /* CSS HEX */
+    --rust-brown: #833506ff;
+    --blood-red: #8B0A0Eff;
+    --carbon-black: #191815ff;
+    --soft-fawn: #CBB281ff;
+    --dust-grey: #D3D1CAff;
+
+    /* CSS HSL */
+    --rust-brown: hsla(23, 91%, 27%, 1);
+    --blood-red: hsla(358, 87%, 29%, 1);
+    --carbon-black: hsla(45, 9%, 9%, 1);
+    --soft-fawn: hsla(40, 42%, 65%, 1);
+    --dust-grey: hsla(47, 9%, 81%, 1);
+}
+
+body {
+    background-color: var(--blood-red);
+}
+
+h1 {
+    text-shadow: 3px 3px 5px white;
+    text-align: center;
+    margin: 0 auto;
+    width: fit-content;
+    visibility: hidden;
+}
+
+div {
+    width: 300px;
+    height: 300px;
+    background-color: var(--soft-fawn);
+    box-shadow: 10px 10px 5px white;
+}
+
+h1:hover {
+    background-color: var(--rust-brown);
+}
+
+button:hover {
+    color: var(--dust-grey);
+    background-color: var(--blood-red);
+}
+
+input:focus{
+    padding-bottom: 100px;
+}
+
+input:hover {
+    background-color: var(--carbon-black);
+}

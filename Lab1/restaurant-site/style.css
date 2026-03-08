@@ -130,6 +130,8 @@ nav > a:hover {
     border-radius: 20px;
 }
 
+/*This combined with div-block-content serve as my card class*/
+/*that i can reuse to easily style across different .html files*/
 .div-block {
     display: flex;
     /*align-items: center;*/
@@ -254,4 +256,77 @@ nav > a:hover {
     color: var(--charcoal);
     padding-bottom: 20px;
     border-bottom: 1px solid var(--gold-accent);
+}
+
+.menu-image {
+    max-width: 400px;
+    height: auto;
+    align-self: center;
+}
+
+.reservation-input {
+    margin-top: 5px;
+    padding: 10px;
+
+    border-radius: 8px;
+    border: 1px solid var(--gold-accent);
+
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 14px;
+
+    background-color: white;
+}
+
+#reservation label {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+    color: var(--charcoal);
+
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+}
+
+#reservation button {
+    margin-top: 10px;
+    padding: 12px;
+
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+
+    background-color: var(--deep-forest);
+    color: var(--ivory);
+
+    border: 2px solid var(--gold-accent);
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+#reservation button:hover {
+    background-color: var(--gold-accent);
+}
+
+fieldset {
+    max-width: 500px;
+    margin: 20px auto;
+
+    border: 2px solid var(--gold-accent);
+    border-radius: 12px;
+
+    padding: 20px;
+    background-color: var(--ivory);
+}
+
+legend {
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    color: var(--deep-forest);
+}
+
+fieldset input {
+    margin-right: 6px;
+    margin-left: 10px;
 }
