@@ -213,3 +213,45 @@ nav > a:hover {
 .image-card:hover .overlay {
     opacity: 1;
 }
+
+.menu-section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.menu-table {
+    width: 70%;
+    margin: 60px auto;
+    border-collapse: collapse;
+}
+
+.menu-header {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    color: var(--charcoal);
+    text-align: left;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--gold-accent);
+    column-span: 2;
+}
+
+.item-name {
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+    color: var(--charcoal);
+    padding-top: 20px;
+}
+
+.item-price {
+    text-align: right;
+    color: var(--charcoal);
+    font-weight: 600;
+}
+
+.item-description {
+    font-style: italic;
+    color: var(--charcoal);
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gold-accent);
+}
