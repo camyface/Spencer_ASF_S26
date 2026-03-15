@@ -75,89 +75,101 @@ function populateMenu(category, tableBodyId) {
 const form = document.getElementById("reservation");
 const errorBox = document.getElementById("errorBox");
 
-form.addEventListener("submit", function(e){
+if(form) {
+    form.addEventListener("submit", function (e) {
 
-    e.preventDefault();
+        e.preventDefault();
 
-    let errors = [];
+        let errors = [];
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const party = document.getElementById("party").value;
-    const date = document.getElementById("date").value;
-    const time = document.getElementById("time").value;
-    const seat = document.querySelector('input[name="seating_pref"]:checked');
-    const resultsBox = document.getElementById("reservationResults");
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const party = document.getElementById("party").value;
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+        const seat = document.querySelector('input[name="seating_pref"]:checked');
+        const resultsBox = document.getElementById("reservationResults");
 
 // Name validation
-    if(name === ""){
-        errors.push("Full Name is required");
-    }
-    else if(name.length > 20){
-        errors.push("Full Name must be under 20 characters");
-    }
+        if (name === "") {
+            errors.push("Full Name is required");
+        } else if (name.length > 20) {
+            errors.push("Full Name must be under 20 characters");
+        }
 
 
 // Email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if(!emailPattern.test(email)){
-        errors.push("Please enter a valid email address");
-    }
+        if (!emailPattern.test(email)) {
+            errors.push("Please enter a valid email address");
+        }
 
 
 // Party size validation
-    if(party < 1 || party > 8){
-        errors.push("Party size must be between 1 and 8");
-    }
+        if (party < 1 || party > 8) {
+            errors.push("Party size must be between 1 and 8");
+        }
 
 
 // Date validation
-    if(date === ""){
-        errors.push("Please select a reservation date");
-    }
+        if (date === "") {
+            errors.push("Please select a reservation date");
+        }
 
 
 // Time validation
-    if(time === ""){
-        errors.push("Please select a reservation time");
-    }
+        if (time === "") {
+            errors.push("Please select a reservation time");
+        }
 
 
 // Seating validation
-    if(!seat){
-        errors.push("Please choose a seating preference");
-    }
+        if (!seat) {
+            errors.push("Please choose a seating preference");
+        }
 
 
 // Show errors
-    if(errors.length > 0){
+        if (errors.length > 0) {
 
-        let errorHTML = `
+            let errorHTML = `
 <div class="alert alert-danger">
 <strong>Please fix the following errors:</strong>
 <ul>
 `;
 
-        errors.forEach(error=>{
-            errorHTML += `<li>${error}</li>`;
-        });
+            errors.forEach(error => {
+                errorHTML += `<li>${error}</li>`;
+            });
 
-        errorHTML += `</ul></div>`;
+            errorHTML += `</ul></div>`;
 
-        errorBox.innerHTML = errorHTML;
+            errorBox.innerHTML = errorHTML;
 
-    }
-    else{
+        } else {
 
-        const dietary = document.getElementById("dietary").value.trim();
-        const newsletter = document.querySelector('input[name="newsletter_opt_in"]').checked
-            ? "Yes"
-            : "No";
+            const dietary = document.getElementById("dietary").value.trim();
+            const newsletter = document.querySelector('input[name="newsletter_opt_in"]').checked
+                ? "Yes"
+                : "No";
 
-        const seatingPref = seat ? seat.value : "None";
+            const seatingPref = seat ? seat.value : "None";
 
-        resultsBox.innerHTML = `
+            const reservationData = {
+                name: name,
+                email: email,
+                partySize: Number(party),
+                date: date,
+                time: time,
+                seatingPreference: seatingPref,
+                dietaryNotes: dietary,
+                newsletterOptIn: newsletter
+            };
+
+            console.log("Reservation Submitted:", reservationData);
+
+            resultsBox.innerHTML = `
 <div class="card mt-4">
     <div class="card-header bg-success text-white">
         Reservation Confirmed
@@ -175,17 +187,20 @@ form.addEventListener("submit", function(e){
 </div>
 `;
 
-        errorBox.innerHTML = `
+            errorBox.innerHTML = `
 <div class="alert alert-success">
 Reservation submitted successfully!
 </div>
 `;
 
-        form.reset();
+            form.reset();
 
-    }
+        }
 
-});
+    });
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     populateMenu("Appetizer", "appetizer-menu");
     populateMenu("Breakfast", "breakfast-menu");
