@@ -8,25 +8,75 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/29dbcd0e0c.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="headline">
-    <div id="head-logo">
+<!--<div id="headline">-->
+<!--    <div id="head-logo">-->
 
+<!--        <img src="images/logo.png" alt="crescent moon with wine glass" id="logo">-->
+<!--        <h1 id="headtext"><a href="index.html">Arbor Oasis</a></h1>-->
+<!--    </div>-->
+<!--    <nav id="main-nav">-->
+<!--        <a href="index.html">Home</a>-->
+<!--        <a href="menu.html">Menu</a>-->
+<!--        <a href="reservations.html">Reservations</a>-->
+<!--        &lt;!&ndash;        I use font awesome in my nav bar!!!&ndash;&gt;-->
+<!--        <i class="fa-brands fa-instagram"></i>-->
+<!--    </nav>-->
+
+<!--</div>-->
+
+
+<!--////////////////////////////////BOOTSTRAP NAVIGATION BAR START //////////////////////////////////////////-->
+<nav class="navbar navbar-expand-lg navbar-dark header header-divider">
+    <div class="container-fluid header">
         <img src="images/logo.png" alt="crescent moon with wine glass" id="logo">
-        <h1 id="headtext"><a href="index.html">Arbor Oasis</a></h1>
-    </div>
-    <nav id="main-nav">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="reservations.html">Reservations</a>
-        <!--        I use font awesome in my nav bar!!!-->
-        <i class="fa-brands fa-instagram"></i>
-    </nav>
+        <a class="navbar-brand header" href="index.html">Arbor Oasis</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item ">
+                    <a class="nav-link"  href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active"  href="reservations.html">Reservations</a>
+                </li>
+                <!--                <li class="nav-item dropdown">-->
+                <!--                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+                <!--                        Menu-->
+                <!--                    </a>-->
+                <!--                    <ul class="dropdown-menu header">-->
+                <!--                        <li><a class="dropdown-item" href="#">Food</a></li>-->
+                <!--                        <li><a class="dropdown-item" href="#">Drink</a></li>-->
+                <!--                        <li><hr class="dropdown-divider"></li>-->
+                <!--                        <li><a class="dropdown-item" href="#">Full Menu</a></li>-->
+                <!--                    </ul>-->
+                <!--                </li>-->
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>-->
+                <!--                </li>-->
+            </ul>
 
-</div>
+        </div>
+    </div>
+</nav>
+
+<!--/////////////// BOOTSTRAP NAVIGATION BAR END //////////////////////////////////////////////////////////-->
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
 <div class="div div-block">
     <p class="div-block-content">Reservations are accepted by request to ensure every
     guest receives the highest level of attention and service.
@@ -36,46 +86,70 @@
     prepared. This approach allows us to maintain the calm, elegant
     experience that defines our restaurant.</p>
 </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <form action="" id="reservation" novalidate>
+
+            <div id="errorBox"></div>
+
+            <label> Full Name:
+                <input class="reservation-input form-control" type="text" name="name" id="name">
+            </label>
+
+            <label> Email:
+                <input class="reservation-input form-control" type="text" name="email" id="email" placeholder="ex, johnsnow@arboroasis.com">
+            </label>
+
+            <label> Party Size:
+                <input class="reservation-input form-control" type="number" name="party_size" id="party">
+            </label>
+
+            <label> Date:
+                <input class="reservation-input form-control" type="date" name="date" id="date">
+            </label>
+
+            <label> Time:
+                <input class="reservation-input form-control" type="time" name="time" id="time">
+            </label>
+
+            <label> Dietary Restrictions:
+                <textarea class="reservation-input form-control" name="dietary_notes" id="dietary" cols="5" rows="5"></textarea>
+            </label>
+
+            <label> Would you like to opt in to our newsletter?
+                <input class="reservation-input" type="checkbox" name="newsletter_opt_in">
+            </label>
+
+            <fieldset>
+                <legend>Seating Preference</legend>
+
+                <input type="radio" name="seating_pref" value="indoor"> Indoor
+                <input type="radio" name="seating_pref" value="outdoor"> Outdoor
+                <input type="radio" name="seating_pref" value="terrace"> Terrace
+
+            </fieldset>
+
+            <br>
+
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-secondary" type="reset">Reset Form</button>
+
+        </form>
+    </div>
+    <div class="row mt-4">
+        <div class="col">
+            <div id="reservationResults"></div>
+        </div>
+    </div>
+</div>
     <p></p>
-    <form action="" id="reservation">
-        <label> Full Name:
-            <input class="reservation-input" type="text" name="name" required maxlength="20">
-        </label>
-        <label> Email:
-            <input class="reservation-input" type="email" name="email" required>
-        </label>
-        <label> Party Size:
-            <input class="reservation-input" type="number" name="party_size" min="1" max="8">
-        </label>
-        <label> Date:
-            <input class="reservation-input" type="date" name="date" required>
-        </label>
-        <label> Time:
-            <input class="reservation-input" type="time" name="time" required>
-        </label>
-
-        <label> Dietary Restrictions:
-            <textarea class="reservation-input" name="dietary_notes" id="" cols="5" rows="5"></textarea>
-<!--            <input class="reservation-input" type="text" name="dietary_notes" maxlength="30">-->
-        </label>
-        <label> Would you like to opt in to our newsletter?
-            <input class="reservation-input" type="checkbox" name="newsletter_opt_in">
-        </label>
-    <fieldset form="reservation">
-        <legend>Seating Preference</legend>
-        <input type="radio" name="seating_pref" id="" value="indoor"> Indoor
-        <input type="radio" name="seating_pref" value="outdoor"> Outdoor
-        <input type="radio" name="seating_pref"  value="terrace"> Terrace
-    </fieldset>
-        <label>
-            <button  type="submit">Submit</button>
-        </label>
-        <label>
-            <button type="reset">Reset Form</button>
-        </label>
 
 
-    </form>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="script.js"></script>
 
 </body>
 </html>

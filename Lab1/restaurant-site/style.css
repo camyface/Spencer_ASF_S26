@@ -52,6 +52,23 @@ body {
     justify-content: space-between;
 }
 
+.header {
+    background-color: var(--deep-forest);
+    color: var(--ivory);
+}
+
+.header-divider {
+    border-bottom: var(--gold-accent) 2px solid;
+
+}
+
+.card-divider {
+    border-bottom: var(--gold-accent) 5px solid;
+    margin: 5px 0;
+}
+
+
+
 /*Fonts*/
 
 
@@ -107,6 +124,7 @@ nav > a:link, a:visited, a:active {
 
 nav > a:hover {
     text-decoration-color: var(--ivory);
+    transition: 0.3s;
 }
 
 #main-nav {
@@ -124,7 +142,7 @@ nav > a:hover {
 }
 
 .img-standard {
-    max-width: 40%;
+    max-width: inherit;
     height: auto;
     margin: 0 15px;
     display: block;
@@ -143,11 +161,15 @@ nav > a:hover {
 .div-block-content {
     flex: 1;
     text-align: center;
-    margin: auto 20px;
+    margin: 30px 20px;
+}
+
+.div-block-spacing {
+    margin: 20px 20px 0 20px;
 }
 
 .mini-header {
-    margin: 0 auto;
+    margin: 0 0 20px 0;
     display: inline;
     text-align: center;
 }
@@ -196,6 +218,11 @@ nav > a:hover {
     display: block;
 }
 
+.gallery {
+    max-width: 75%;
+    height: auto;
+}
+
 .overlay {
     position: absolute;
     top: 0;
@@ -224,9 +251,30 @@ nav > a:hover {
 }
 
 .menu-table {
+    background-color: var(--sandstone);
     width: 70%;
     margin: 60px auto;
     border-collapse: collapse;
+}
+
+.menu-table td,
+.menu-table th {
+    background-color: var(--sandstone);
+}
+
+.menu-table td {
+    padding: 8px 0;
+}
+
+.menu-table .item-description {
+    font-style: italic;
+    color: var(--charcoal);
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gold-accent);
+}
+
+.table-divider {
+    border-top-color: var(--gold-accent);
 }
 
 .menu-header {
@@ -250,6 +298,7 @@ nav > a:hover {
     text-align: right;
     color: var(--charcoal);
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .item-description {
@@ -330,6 +379,16 @@ legend {
 fieldset input {
     margin-right: 6px;
     margin-left: 10px;
+}
+
+.error{
+    color:red;
+    font-size:14px;
+    display:block;
+}
+
+.invalid{
+    border:2px solid red;
 }
 
 /*font awesome used to add instagram logo in nav bar*/

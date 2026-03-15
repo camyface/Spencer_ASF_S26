@@ -8,26 +8,73 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/29dbcd0e0c.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-<div id="headline">
-    <div id="head-logo">
+<!--<div id="headline">-->
+<!--    <div id="head-logo">-->
 
+<!--        <img src="images/logo.png" alt="crescent moon with wine glass" id="logo">-->
+<!--        <h1 id="headtext"><a href="index.html">Arbor Oasis</a></h1>-->
+<!--    </div>-->
+<!--    <nav id="main-nav">-->
+<!--        <a href="index.html">Home</a>-->
+<!--        <a href="menu.html">Menu</a>-->
+<!--        <a href="reservations.html">Reservations</a>-->
+<!--&lt;!&ndash;        I use font awesome in my nav bar!!!&ndash;&gt;-->
+<!--        <i class="fa-brands fa-instagram"></i>-->
+<!--    </nav>-->
+
+<!--</div>-->
+
+
+<!--////////////////////////////////BOOTSTRAP NAVIGATION BAR START //////////////////////////////////////////-->
+<nav class="navbar navbar-expand-lg navbar-dark header header-divider">
+    <div class="container-fluid header">
         <img src="images/logo.png" alt="crescent moon with wine glass" id="logo">
-        <h1 id="headtext"><a href="index.html">Arbor Oasis</a></h1>
+        <a class="navbar-brand header" href="index.html">Arbor Oasis</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item ">
+                    <a class="nav-link"  href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active"  href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reservations.html">Reservations</a>
+                </li>
+                <!--                <li class="nav-item dropdown">-->
+                <!--                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+                <!--                        Menu-->
+                <!--                    </a>-->
+                <!--                    <ul class="dropdown-menu header">-->
+                <!--                        <li><a class="dropdown-item" href="#">Food</a></li>-->
+                <!--                        <li><a class="dropdown-item" href="#">Drink</a></li>-->
+                <!--                        <li><hr class="dropdown-divider"></li>-->
+                <!--                        <li><a class="dropdown-item" href="#">Full Menu</a></li>-->
+                <!--                    </ul>-->
+                <!--                </li>-->
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>-->
+                <!--                </li>-->
+            </ul>
+
+        </div>
     </div>
-    <nav id="main-nav">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="reservations.html">Reservations</a>
-<!--        I use font awesome in my nav bar!!!-->
-        <i class="fa-brands fa-instagram"></i>
-    </nav>
+</nav>
 
-</div>
+<!--/////////////// BOOTSTRAP NAVIGATION BAR END //////////////////////////////////////////////////////////-->
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
 <div class="div-block">
     <p class="div-block-content">Our menu is thoughtfully crafted to celebrate the beauty
     and richness of seasonal ingredients, combining refined culinary
@@ -40,87 +87,74 @@
     fresh, natural ingredients.</p>
 
 </div>
+        </div>
+    </div>
+</div>
 <!--<section class="menu-section">-->
 
-    <div>
-        <table class="menu-table">
-            <caption class="menu-header">Appetizers</caption>
+    <div class="container">
+
+<!--        /////////////////////////START APPETIZER MENU ////////////////////////-->
+        <table class="table table-borderless menu-table">
+<!--            <caption class="menu-header">Appetizers</caption>-->
             <thead>
 
             <tr>
-<!--                <th class="menu-header">Appetizers</th>-->
+                <th class="menu-header">Appetizers</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td class="item-name">Garden Citrus Burrata</td>
-                <td class="item-price">$26</td>
-            </tr>
-            <tr>
-                <td class="item-description">Creamy Burrata served with heirloom tomatoes,
-                    shaved fennel, and fresh basil, finished with
-                a bright citrus vinaigrette and toasted artisan bread</td>
-            </tr>
-
-            <tr>
-                <td class="item-name">Seared Scallops with Herb Butter</td>
-                <td class="item-price">$32</td>
-            </tr>
-            <tr>
-                <td class="item-description">Perfectly seared sea scallops served over a light
-                lemon herb butter sauce with microgreens and a touch
-                of sea salt for a delicate coastal flavor</td>
-            </tr>
-
-            <tr>
-                <td class="item-name">Wild Mushroom Tartlet</td>
-                <td class="item-price">$19</td>
-            </tr>
-            <tr>
-                <td class="item-description">A flaky pastry filled with sauteed wild mushrooms,
-                caramelized shallots, and creamy goat cheese, finished
-                with fresh thyme and truffle oil</td>
-            </tr>
-
-            <tr>
-                <td class="item-name">Coastal Shrimp Cocktail</td>
-                <td class="item-price">$21</td>
-            </tr>
-            <tr>
-                <td class="item-description">Chilled jumbo shrimp served with a house-made citrus
-                cocktail sauce, fresh lemon, and a hint of horseradish
-                for a refreshing start to your meal</td>
-            </tr>
-
-            <tr>
-                <td class="item-name">Charred Asparagus with Parmesan</td>
-                <td class="item-price">$13</td>
-            </tr>
-            <tr>
-                <td class="item-description">Fresh asparagus lightly grilled and topped with
-                shaved parmesan, toasted pine nuts, and a drizzle of
-                ages balsamic reduction</td>
-            </tr>
-
-            <tr>
-                <td class="item-name">Smoked Salmon Crostini</td>
-                <td class="item-price">$22</td>
-            </tr>
-            <tr>
-                <td class="item-description">Thinly sliced smoked salmon layered over toasted
-                crostini with herbed cream cheese, capers, pickled
-                red onion, and fresh dill</td>
-            </tr>
+            <tbody id="appetizer-menu">
             </tbody>
+        </table>
+<!--        /////////////////////////////START BREAKFAST MENU///////////////////////-->
+        <table class="table table-borderless menu-table">
+            <thead>
+            <tr>
+                <th class="menu-header">Breakfast</th>
+            </tr>
+            </thead>
+            <tbody id="breakfast-menu"></tbody>
+        </table>
 
+<!--////////////////////// START LUNCH MENU //////////////////////////////////-->
 
+        <table class="table table-borderless menu-table">
+            <thead>
+            <tr>
+                <th class="menu-header">Lunch</th>
+            </tr>
+            </thead>
+            <tbody id="lunch-menu"></tbody>
         </table>
 
 
+<!--        //////////////////////////START DINNER MENU ////////////////////////////////-->
+        <table class="table table-borderless menu-table">
+            <thead>
+            <tr>
+                <th class="menu-header">Dinner</th>
+            </tr>
+            </thead>
+            <tbody id="dinner-menu"></tbody>
+        </table>
+
+<!--        //////////////////////////////START DESSERT MENU ///////////////////////////////////////-->
+
+        <table class="table table-borderless menu-table">
+            <thead>
+            <tr>
+                <th class="menu-header">Desserts</th>
+            </tr>
+            </thead>
+            <tbody id="dessert-menu"></tbody>
+        </table>
     </div>
     <div class="div-block-content">
         <img class="menu-image" src="images/scallops.jpg" alt="scallops on plate">
     </div>
+
 <!--</section>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js script.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="script.js"></script>
 </body>
 </html>

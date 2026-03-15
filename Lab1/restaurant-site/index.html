@@ -9,147 +9,285 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/29dbcd0e0c.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
 
     <link rel="stylesheet" href="style.css">
 </head>
-
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <body>
-<div id="headline">
-    <div id="head-logo">
+<!--<div id="headline">-->
+<!--    <div id="head-logo">-->
 
-    <img src="images/logo.png" alt="crescent moon with wine glass" id="logo">
-    <h1 id="headtext"><a href="index.html">Arbor Oasis</a></h1>
-    </div>
-    <nav id="main-nav">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="reservations.html">Reservations</a>
-        <!--        I use font awesome in my nav bar!!!-->
-        <i class="fa-brands fa-instagram"></i>
-    </nav>
-    
-</div>
+<!--    <img src="images/logo.png" alt="crescent moon with wine glass" id="logo">-->
+<!--    <h1 id="headtext"><a href="index.html">Arbor Oasis</a></h1>-->
+<!--    </div>-->
+<!--    <nav id="main-nav">-->
+<!--        <a href="index.html">Home</a>-->
+<!--        <a href="menu.html">Menu</a>-->
+<!--        <a href="reservations.html">Reservations</a>-->
+<!--        &lt;!&ndash;        I use font awesome in my nav bar!!!&ndash;&gt;-->
+<!--        <i class="fa-brands fa-instagram"></i>-->
+<!--    </nav>-->
+<!--    -->
+<!--</div>-->
 
-<div>
-<!--    <video autoplay loop muted src="videos/cookingvideo.mov" id="responsive-video"></video>-->
-</div>
-
-<div class="div-block">
-
-    <div class="div-block-content">
-        <h2 class="mini-header">Where Nature Meets Refined Dining</h2>
-        <p>Our restaurant was created as a retreat where refined cuisine and the beauty of nature exists in
-        perfect harmony. Inspired by the peaceful atmosphere of luxury resorts, the space is designed to
-        feel both elegant and inviting, allowing guests to escape the pace of everyday life. Our culinary
-        philosophy centers on seasonal ingredients, thoughtful preparation, and simple presentation that
-        highlights the natural character of every dish. Whether joining us for an intimate dinner or a
-        special gathering, guests are invited to relax, unwind, and enjoy a dining experience shaped by
-        comfort, elegance, and a deep connection to nature.</p>
-<!--        <a href="menu.html" class="menu-button">Reservations</a>-->
-    </div>
-
-    <img src="images/nature_restaurant.jpg" alt="picture of restaurant" class="img-standard">
-</div>
-
-<div class="div-block">
-    <img src="images/menu.jpg" alt="picture of menu and food" class="img-standard">
-
-    <div class="div-block-content">
-        <h2 class="mini-header">Explore our Offerings</h2>
-        <p>Our menu celebrates the harmony between refined culinary technique and the natural beauty of seasonal
-        ingredients. Each dish is thoughtfully crafted using fresh, locally sourced produce, sustainably caught
-        seafood, and premium cuts prepared with care. From vibrant garden-inspired starters to expertly prepared
-        entrées and indulgent desserts, every plate is designed to highlight flavor, freshness, and elegance.
-        The result is a dining experience that feels both elevated and deeply connected to nature.</p>
-        <a href="menu.html" class="menu-button">Menu</a>
-    </div>
-
-</div>
-
-<div class="div-block">
-
-    <div class="div-block-content">
-        <h2 class="mini-header">Plan Your Visit</h2>
-        <p>Planning your visit is the first step towards an unforgettable dining experience. By reserving a table,
-        your table is welcomed into a relaxing atmosphere where attentive service, refined cuisine, and natural
-        beauty come together. Whether you're celebrating a special occasion, enjoying a romantic evening, or
-        gathering with friends and family, our team ensures every detail is thoughtfully prepared so you can
-        simply arrive, unwind, and savor the moment.</p>
-        <a href="menu.html" class="menu-button">Reservations</a>
-    </div>
-
-    <img src="images/restaurantreservationgroup.jpg" alt="picture of group of people at restaurant" class="img-standard">
-</div>
-
-<div class="div-block">
-    <div class="div-block-content">
-    <h2 class="mini-header"> Gallery </h2>
-
-    <div class="image-row">
-        <div class="image-card">
-            <img src="images/nature_restaurant.jpg" alt="">
-            <div class="overlay">
-                <p>view details</p>
-            </div>
+<!--////////////////////////////////BOOTSTRAP NAVIGATION BAR START //////////////////////////////////////////-->
+<nav class="navbar navbar-expand-lg navbar-dark header header-divider">
+    <div class="container-fluid header">
+        <img src="images/logo.png" alt="crescent moon with wine glass" id="logo">
+        <a class="navbar-brand header" href="index.html">Arbor Oasis</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reservations.html">Reservations</a>
+                </li>
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                        Menu-->
+<!--                    </a>-->
+<!--                    <ul class="dropdown-menu header">-->
+<!--                        <li><a class="dropdown-item" href="#">Food</a></li>-->
+<!--                        <li><a class="dropdown-item" href="#">Drink</a></li>-->
+<!--                        <li><hr class="dropdown-divider"></li>-->
+<!--                        <li><a class="dropdown-item" href="#">Full Menu</a></li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>-->
+<!--                </li>-->
+            </ul>
         </div>
-        <div class="image-card">
-            <img src="images/nature_restaurant.jpg" alt="">
-            <div class="overlay">
-                <p>view details</p>
-            </div>
-        </div>
-        <div class="image-card">
-            <img src="images/nature_restaurant.jpg" alt="">
-            <div class="overlay">
-                <p>view details</p>
-            </div>
-        </div>
-
     </div>
-        <div class="image-row">
-            <div class="image-card">
-                <img src="images/nature_restaurant.jpg" alt="">
-                <div class="overlay">
-                    <p>view details</p>
-                </div>
-            </div>
-            <div class="image-card">
-                <img src="images/nature_restaurant.jpg" alt="">
-                <div class="overlay">
-                    <p>view details</p>
-                </div>
-            </div>
-            <div class="image-card">
-                <img src="images/nature_restaurant.jpg" alt="">
-                <div class="overlay">
-                    <p>view details</p>
-                </div>
-            </div>
+</nav>
 
+<!--/////////////// BOOTSTRAP NAVIGATION BAR END //////////////////////////////////////////////////////////-->
+
+<div class="container-fluid">
+    <video class="img-fluid" autoplay loop muted src="videos/cookingvideo.mp4" id="responsive-video"></video>
+</div>
+
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-1"></div>
+        <div class="col-10 card-divider "></div>
+        <div class="col-1"></div>
+    </div>
+
+
+    <div class="row">
+        <div class="col div-block-content">
+            <div class="row">
+                <div class="col div-block-content">
+                    <h2 class="mini-header">Where Nature Meets Refined Dining</h2>
+                </div>
+            </div>
+            <p>Our restaurant was created as a retreat where refined cuisine and the beauty of nature exists in
+                perfect harmony. Inspired by the peaceful atmosphere of luxury resorts, the space is designed to
+                feel both elegant and inviting, allowing guests to escape the pace of everyday life. Our culinary
+                philosophy centers on seasonal ingredients, thoughtful preparation, and simple presentation that
+                highlights the natural character of every dish. Whether joining us for an intimate dinner or a
+                special gathering, guests are invited to relax, unwind, and enjoy a dining experience shaped by
+                comfort, elegance, and a deep connection to nature.</p>
         </div>
-        <div class="image-row">
-            <div class="image-card">
-                <img src="images/nature_restaurant.jpg" alt="">
-                <div class="overlay">
-                    <p>view details</p>
+        <div class="col div-block">
+            <img src="images/nature_restaurant.jpg" alt="picture of restaurant" class="img-standard img-fluid">
+        </div>
+    </div>
+
+
+    <div class="row ">
+        <div class="col-2"></div>
+        <div class="col-8 card-divider"></div>
+        <div class="col-2"></div>
+    </div>
+
+    <div class="row">
+        <div class="col div-block-content">
+            <img src="images/menu.jpg" alt="picture of menu and food" class="img-standard img-fluid">
+        </div>
+        <div class="col div-block-content">
+            <div class="row">
+                <div class="col div-block-content">
+                    <h2 class="mini-header">Explore Our Offerings</h2>
                 </div>
             </div>
-            <div class="image-card">
-                <img src="images/nature_restaurant.jpg" alt="">
-                <div class="overlay">
-                    <p>view details</p>
+            <div class="row">
+                <div class="col">
+            <p>Our menu celebrates the harmony between refined culinary technique and the natural beauty of seasonal ingredients. Each dish is thoughtfully crafted using fresh, locally sourced produce, sustainably caught seafood, and premium cuts prepared with care. From vibrant garden-inspired starters to expertly prepared entrées and indulgent desserts, every plate is designed to highlight flavor, freshness, and elegance. The result is a dining experience that feels both elevated and deeply connected to nature.</p>
                 </div>
             </div>
-            <div class="image-card">
-                <img src="images/nature_restaurant.jpg" alt="">
-                <div class="overlay">
-                    <p>view details</p>
+            <div class="row">
+                <div class="col">
+                    <a href="menu.html" class="menu-button">Reservations</a>
                 </div>
             </div>
 
         </div>
     </div>
+
+    <div class="row ">
+        <div class="col-2"></div>
+        <div class="col-8 card-divider"></div>
+        <div class="col-2"></div>
+    </div>
+
+    <div class="row">
+        <div class="col div-block-content">
+            <div class="row">
+                <div class="col div-block-content">
+                    <h2 class="mini-header">Plan Your Visit</h2>
+                </div>
+            </div>
+            <p>Planning your visit is the first step towards an unforgettable dining experience. By reserving a table, your table is welcomed into a relaxing atmosphere where attentive service, refined cuisine, and natural beauty come together. Whether you're celebrating a special occasion, enjoying a romantic evening, or gathering with friends and family, our team ensures every detail is thoughtfully prepared so you can simply arrive, unwind, and savor the moment.</p>
+            <div class="row">
+                <div class="col">
+                    <a href="menu.html" class="menu-button">Reservations</a>
+                </div>
+            </div>
+        </div>
+        <div class="col div-block">
+            <img src="images/restaurantreservationgroup.jpg" alt="picture of group in restaurant" class="img-standard img-fluid">
+        </div>
+    </div>
+
+
 </div>
 
+<div class="row ">
+    <div class="col-2"></div>
+    <div class="col-8 card-divider"></div>
+    <div class="col-2"></div>
+</div>
+
+<!--////////////////////////////////BEGIN CAROUSEL //////////////////////////////////-->
+
+<div class="container-fluid gallery">
+    <div class="row">
+        <div class="col">
+            <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/menu.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>First slide label</h5>
+                            <p>Some representative placeholder content for the first slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/restaurantreservationgroup.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Second slide label</h5>
+                            <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/nature_restaurant.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--////////////////////////////////END CAROUSEL //////////////////////////////////-->
+
+<!--<div class="div-block">-->
+<!--    <div class="div-block-content">-->
+<!--    <h2 class="mini-header"> Gallery </h2>-->
+
+<!--    <div class="image-row">-->
+<!--        <div class="image-card">-->
+<!--            <img src="images/nature_restaurant.jpg" alt="">-->
+<!--            <div class="overlay">-->
+<!--                <p>view details</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="image-card">-->
+<!--            <img src="images/nature_restaurant.jpg" alt="">-->
+<!--            <div class="overlay">-->
+<!--                <p>view details</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="image-card">-->
+<!--            <img src="images/nature_restaurant.jpg" alt="">-->
+<!--            <div class="overlay">-->
+<!--                <p>view details</p>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </div>-->
+<!--        <div class="image-row">-->
+<!--            <div class="image-card">-->
+<!--                <img src="images/nature_restaurant.jpg" alt="">-->
+<!--                <div class="overlay">-->
+<!--                    <p>view details</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="image-card">-->
+<!--                <img src="images/nature_restaurant.jpg" alt="">-->
+<!--                <div class="overlay">-->
+<!--                    <p>view details</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="image-card">-->
+<!--                <img src="images/nature_restaurant.jpg" alt="">-->
+<!--                <div class="overlay">-->
+<!--                    <p>view details</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--        <div class="image-row">-->
+<!--            <div class="image-card">-->
+<!--                <img src="images/nature_restaurant.jpg" alt="">-->
+<!--                <div class="overlay">-->
+<!--                    <p>view details</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="image-card">-->
+<!--                <img src="images/nature_restaurant.jpg" alt="">-->
+<!--                <div class="overlay">-->
+<!--                    <p>view details</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="image-card">-->
+<!--                <img src="images/nature_restaurant.jpg" alt="">-->
+<!--                <div class="overlay">-->
+<!--                    <p>view details</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
