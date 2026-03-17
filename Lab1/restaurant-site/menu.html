@@ -32,7 +32,7 @@
 
 
 <!--////////////////////////////////BOOTSTRAP NAVIGATION BAR START //////////////////////////////////////////-->
-<nav class="navbar navbar-expand-lg navbar-dark header header-divider">
+<nav class="navbar  sticky-top navbar-expand-lg navbar-dark header header-divider">
     <div class="container-fluid header">
         <img src="images/logo.png" alt="crescent moon with wine glass" id="logo">
         <a class="navbar-brand header" href="index.html">Arbor Oasis</a>
@@ -75,37 +75,45 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-<div class="div-block">
-    <p class="div-block-content">Our menu is thoughtfully crafted to celebrate the beauty
-    and richness of seasonal ingredients, combining refined culinary
-    techniques with the natural flavors of the land and sea. Each dish
-    highlights fresh produce, sustainably sourced seafood, and premium
-    cuts prepared with care and creativity. Inspired by the tranquility
-    of nature and the elegance of resort dining, our selections are designed
-    to provide a balanced and memorable experiences, where every
-    course reflects both sophistication and a deep appreciation for
-    fresh, natural ingredients.</p>
+            <div class="div-block">
+                <p class="div-block-content">Our menu is thoughtfully crafted to celebrate the beauty
+                and richness of seasonal ingredients, combining refined culinary
+                techniques with the natural flavors of the land and sea. Each dish
+                highlights fresh produce, sustainably sourced seafood, and premium
+                cuts prepared with care and creativity. Inspired by the tranquility
+                of nature and the elegance of resort dining, our selections are designed
+                to provide a balanced and memorable experiences, where every
+                course reflects both sophistication and a deep appreciation for
+                fresh, natural ingredients.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Menu
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" data-filter="all">All</a></li>
+                    <li><a class="dropdown-item" data-filter="breakfast-menu">Breakfast</a></li>
+                    <li><a class="dropdown-item" data-filter="lunch-menu">Lunch</a></li>
+                    <li><a class="dropdown-item" data-filter="appetizer-menu">Appetizer</a></li>
+                    <li><a class="dropdown-item" data-filter="dinner-menu">Dinner</a></li>
+                    <li><a class="dropdown-item" data-filter="dessert-menu">Desserts</a></li>
 
-</div>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
+
+
 <!--<section class="menu-section">-->
 
     <div class="container">
 
-<!--        /////////////////////////START APPETIZER MENU ////////////////////////-->
-        <table class="table table-borderless menu-table">
-<!--            <caption class="menu-header">Appetizers</caption>-->
-            <thead>
 
-            <tr>
-                <th class="menu-header">Appetizers</th>
-            </tr>
-            </thead>
-            <tbody id="appetizer-menu">
-            </tbody>
-        </table>
 <!--        /////////////////////////////START BREAKFAST MENU///////////////////////-->
         <table class="table table-borderless menu-table">
             <thead>
@@ -127,6 +135,18 @@
             <tbody id="lunch-menu"></tbody>
         </table>
 
+        <!--        /////////////////////////START APPETIZER MENU ////////////////////////-->
+        <table class="table table-borderless menu-table">
+            <!--            <caption class="menu-header">Appetizers</caption>-->
+            <thead>
+
+            <tr>
+                <th class="menu-header">Appetizers</th>
+            </tr>
+            </thead>
+            <tbody id="appetizer-menu">
+            </tbody>
+        </table>
 
 <!--        //////////////////////////START DINNER MENU ////////////////////////////////-->
         <table class="table table-borderless menu-table">
@@ -154,7 +174,7 @@
     </div>
 
 <!--</section>-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js script.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="script.js"></script>
 </body>
 </html>

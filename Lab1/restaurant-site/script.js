@@ -200,6 +200,25 @@ Reservation submitted successfully!
     });
 }
 
+document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const filter = this.getAttribute('data-filter');
+        filterItems(filter);
+    });
+});
+
+function filterItems(filter) {
+    const tables = document.querySelectorAll('.menu-table tbody');
+    tables.forEach(table => {
+        if (filter === 'all' || table.id === filter) {
+            table.parentElement.style.display = 'block';
+        } else {
+            table.parentElement.style.display = 'none';
+        }
+    })
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
     populateMenu("Appetizer", "appetizer-menu");
