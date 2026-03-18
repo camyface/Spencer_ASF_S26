@@ -36,7 +36,12 @@
                     <a class="nav-link" href="reservations.html">Reservations</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a class="nav-link position-relative active" href="cart.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count"
+                              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0
+                        </span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -44,3 +49,47 @@
 </nav>
 
 <!--/////////////// BOOTSTRAP NAVIGATION BAR END //////////////////////////////////////////////////////////-->
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <td>Item</td>
+                        <td>Qty</td>
+                        <td>Total</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+
+                <tfoot>
+                <tr>
+                    <th scope="row">Subtotal</th>
+                    <td></td>
+                    <td id="subtotal"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Tax</th>
+                    <td></td>
+                    <td id="tax"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Total</th>
+                    <td></td>
+                    <td id="total"></td>
+                    <td></td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>

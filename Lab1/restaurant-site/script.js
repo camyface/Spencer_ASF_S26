@@ -40,6 +40,7 @@ const MENU_ITEMS = [
 
 function populateMenu(category, tableBodyId) {
     const tableBody = document.getElementById(tableBodyId);
+    if (!tableBody) return;
     const items = MENU_ITEMS.filter(item => item.category === category);
 
     items.forEach(item => {
@@ -54,14 +55,28 @@ function populateMenu(category, tableBodyId) {
         priceCell.classList.add("price");
         priceCell.textContent = `$${item.price}`;
 
+        const addCell = document.createElement("td");
+        const addIcon = document.createElement("i");
+        addIcon.className = "fa-solid fa-plus add-icon";
+        addIcon.style.cursor = "pointer";
+
+        addIcon.addEventListener("click", () => {
+            addToCart(item.id);
+            showAddToCartToast();
+        });
+
+
+        addCell.appendChild(addIcon);
+
         nameRow.appendChild(nameCell);
         nameRow.appendChild(priceCell);
+        nameRow.appendChild(addCell);
 
         const descRow = document.createElement("tr");
 
         const descCell = document.createElement("td");
         descCell.classList.add("item-description");
-        descCell.colSpan = 2;
+        descCell.colSpan = 3;
         descCell.textContent = item.description;
 
         descRow.appendChild(descCell);
@@ -70,6 +85,231 @@ function populateMenu(category, tableBodyId) {
         tableBody.appendChild(descRow);
     })
 }
+
+function getCart() {
+    return JSON.parse(localStorage.getItem("cart")) || {};
+}
+
+function saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// function addToCart(id) {
+//     const cart = getCart();
+//     const existingItem = cart.find(item => item.id === id);
+//
+//     if (existingItem) {
+//         existingItem.qty += 1;
+//     } else {
+//         cart.push({id: id, qty: 1});
+//     }
+//
+//     saveCart(cart);
+// }
+
+function addToCart(id) {
+    const cart = getCart();
+
+    if (cart[id]) {
+        cart[id].qty += 1;
+    } else {
+        cart[id] = { qty: 1 };
+    }
+    saveCart(cart);
+    updateCartBadge();
+}
+
+function updateCartBadge() {
+    const cart = getCart();
+    const badge = document.getElementById("cart-count");
+
+    if (!badge) return;
+
+    let totalQty = 0;
+
+    Object.values(cart).forEach(item => {
+        totalQty += item.qty;
+    });
+
+    badge.textContent = totalQty;
+
+    // Hide badge if empty
+    badge.style.display = totalQty > 0 ? "inline-block" : "none";
+}
+
+function showAddToCartToast() {
+    const toastEl = document.getElementById("cart-toast");
+    if (!toastEl) return;
+
+    const toast = new bootstrap.Toast(toastEl);
+    toast.show();
+}
+
+// function populateCartTable(id) {
+//     const cart = getCart();
+//     const tableBody = document.querySelector("tbody");
+//
+//     tableBody.innerHTML = "";
+//
+//     let subtotal = 0;
+//
+//     cart.forEach(cartItem => {
+//         const menuItem = MENU_ITEMS.find(item => item.id === cartItem.id);
+//
+//         const row = document.createElement("tr");
+//
+//         const nameCell = document.createElement("td");
+//         nameCell.textContent = menuItem.name;
+//
+//         const qtyCell = document.createElement("td");
+//         const qtyInput = document.createElement("input");
+//         qtyInput.type = "number";
+//         qtyInput.value = cartItem.qty;
+//         qtyInput.min = 0;
+//
+//         qtyInput.addEventListener("change", () => {
+//             updateQuantity(cartItem.id, parseInt(qtyInput.value));
+//         });
+//         qtyCell.appendChild(qtyInput);
+//
+//         const totalCell = document.createElement("td");
+//         const itemTotal = cartItem.qty * menuItem.price;
+//         totalCell.textContent = `$${itemTotal.toFixed(2)}`;
+//
+//         subtotal+= itemTotal;
+//
+//         const removeCell = document.createElement("td");
+//         const removeIcon = document.createElement("i");
+//         removeIcon.className = "fa-solid fa-xmark";
+//         removeIcon.style.cursor = "pointer";
+//
+//         removeIcon.addEventListener("click", () => removeFromCart(cartItem.id));
+//
+//         removeCell.appendChild(nameCell);
+//         row.appendChild(qtyCell);
+//         row.appendChild(totalCell);
+//         row.appendChild(removeCell);
+//
+//         tableBody.appendChild(row);
+//     });
+//
+//     updateTotals(subtotal);
+// }
+
+function populateCartTable() {
+    const cart = getCart();
+    const tableBody = document.getElementById("cart-items");
+
+    tableBody.innerHTML = "";
+
+    let subtotal = 0;
+
+    Object.keys(cart).forEach(id => {
+        const menuItem = MENU_ITEMS.find(item => item.id == id);
+        if (!menuItem) return;
+        const qty = cart[id].qty;
+
+        const row = document.createElement("tr");
+
+        // Name
+        const nameCell = document.createElement("td");
+        nameCell.textContent = menuItem.name;
+
+        // Qty
+        const qtyCell = document.createElement("td");
+        const qtyInput = document.createElement("input");
+        qtyInput.type = "number";
+        qtyInput.value = qty;
+        qtyInput.min = 0;
+
+        qtyInput.addEventListener("change", () => {
+            updateQuantity(id, parseInt(qtyInput.value));
+        });
+
+        qtyCell.appendChild(qtyInput);
+
+        // Total
+        const totalCell = document.createElement("td");
+        const itemTotal = qty * menuItem.price;
+        totalCell.textContent = `$${itemTotal.toFixed(2)}`;
+
+        subtotal += itemTotal;
+
+        // Remove
+        const removeCell = document.createElement("td");
+        const removeIcon = document.createElement("i");
+        removeIcon.className = "fa-solid fa-xmark";
+        removeIcon.style.cursor = "pointer";
+
+        removeIcon.addEventListener("click", () => removeFromCart(id));
+
+        removeCell.appendChild(removeIcon);
+
+        row.appendChild(nameCell);
+        row.appendChild(qtyCell);
+        row.appendChild(totalCell);
+        row.appendChild(removeCell);
+
+        tableBody.appendChild(row);
+    });
+
+    // console.log("Cart: ", cart)
+    updateTotals(subtotal);
+}
+
+// function updateQuantity(id, qty) {
+//     let cart = getCart();
+//
+//     if (qty <= 0) {
+//         cart = cart.filter(item => item.id !== id);
+//     } else {
+//         const item = cart.find(item => item.id === id);
+//         item.qty = qty;
+//     }
+//
+//     saveCart(cart);
+//     populateCartTable();
+// }
+
+function updateQuantity(id, qty) {
+    const cart = getCart();
+
+    if (qty <= 0) {
+        delete cart[id];
+    } else {
+        cart[id].qty = qty;
+    }
+
+    saveCart(cart);
+    populateCartTable();
+}
+
+function removeFromCart(id) {
+    const cart = getCart();
+
+    delete cart[id];
+
+    saveCart(cart);
+    populateCartTable();
+}
+
+function updateTotals(subtotal) {
+    const taxRate = 0.0825;
+    const tax = subtotal * taxRate;
+    const total = subtotal + tax;
+
+    document.getElementById("subtotal").textContent = money.format(subtotal);
+    document.getElementById("tax").textContent = money.format(tax);
+    document.getElementById("total").textContent = money.format(total);
+}
+
+
+
+
+// document.querySelectorAll()
+//create event listener to add item to cart with quantity set to 1
+//then create dropdown or buttons to update quantity while on cart.html
+//then we can calculate total
 
 
 const form = document.getElementById("reservation");
@@ -219,14 +459,24 @@ function filterItems(filter) {
     })
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.getElementById("cart-items")) {
+        populateCartTable();
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateCartBadge();
+});
 
 document.addEventListener("DOMContentLoaded", function () {
-    populateMenu("Appetizer", "appetizer-menu");
-    populateMenu("Breakfast", "breakfast-menu");
-    populateMenu("Lunch", "lunch-menu");
-    populateMenu("Dinner", "dinner-menu");
-    populateMenu("Dessert", "dessert-menu");
 
-
+    if (document.getElementById("appetizer-menu")) {
+        populateMenu("Appetizer", "appetizer-menu");
+        populateMenu("Breakfast", "breakfast-menu");
+        populateMenu("Lunch", "lunch-menu");
+        populateMenu("Dinner", "dinner-menu");
+        populateMenu("Dessert", "dessert-menu");
+    }
 
 });

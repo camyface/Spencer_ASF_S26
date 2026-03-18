@@ -89,6 +89,24 @@ h1 > a {
     color: inherit;
 }
 
+.add-icon {
+    color: var(--deep-forest);
+    transition: transform 0.15s ease, color 0.15s ease;
+
+}
+
+/* Hover effect */
+.add-icon:hover {
+    color: #28a745; /* green */
+    transform: scale(1.2);
+}
+
+/* Click (pressed) effect */
+.add-icon:active {
+    transform: scale(0.9);
+    color: #1e7e34;
+}
+
 #head-logo {
     display: flex;
 }
