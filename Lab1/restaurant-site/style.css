@@ -67,7 +67,9 @@ body {
     margin: 5px 0;
 }
 
-
+.bg-content {
+    background-color: var(--sandstone);
+}
 
 /*Fonts*/
 
@@ -88,6 +90,13 @@ h1 > a {
     text-decoration: none;
     color: inherit;
 }
+
+.text-content {
+    font-family: "Playfair Display", Helvetica, Arial, serif;
+    font-weight: bold;
+    color: var(--charcoal);
+}
+
 
 .add-icon {
     color: var(--deep-forest);
