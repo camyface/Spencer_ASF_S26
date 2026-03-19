@@ -34,7 +34,22 @@ const MENU_ITEMS = [
     {id: 16, name: "Rosemary Roasted Lamb", description: "Slow-roasted lamb infused with rosemary and garlic, served with roasted root vegetables and a delicate herb jus.", price: 39, category: "Dinner"},
     {id: 17, name: "Vanilla Bean Creme Brulee", description: "Silky vanilla custard topped with a perfectly caramelized sugar crust and fresh berries.", price: 14, category: "Dessert"},
     {id: 18, name: "Chocolate Ganache Torte", description: "Rich dark chocolate torte with a smooth ganache center, served with raspberry coulis and whipped cream.", price: 16, category: "Dessert"},
-    {id: 19, name: "Lemon Lavender Cheesecake", description: "Creamy cheesecake infused with delicate lavender and bright lemon, served with a honey drizzle and candied citrus.", price: 15, category: "Dessert"}
+    {id: 19, name: "Lemon Lavender Cheesecake", description: "Creamy cheesecake infused with delicate lavender and bright lemon, served with a honey drizzle and candied citrus.", price: 15, category: "Dessert"},
+    {id: 20, name: "Roasted Beet Carpaccio", description: "Thinly sliced roasted beets layered with whipped goat cheese, toasted walnuts, and a drizzle of honey balsamic glaze.", price: 17, category: "Appetizer"},
+    {id: 21, name: "Truffle Parmesan Fries", description: "Crispy hand-cut fries tossed in truffle oil, finished with grated parmesan and fresh herbs.", price: 14, category: "Appetizer"},
+    {id: 22, name: "Crispy Calamari", description: "Lightly fried calamari served with lemon aioli and a house-made marinara sauce.", price: 18, category: "Appetizer"},
+    {id: 23, name: "Avocado Garden Toast", description: "Smashed avocado on toasted sourdough topped with radish, microgreens, chili flakes, and a poached egg.", price: 16, category: "Breakfast"},
+    {id: 24, name: "Smoked Salmon Benedict", description: "Poached eggs and smoked salmon over toasted English muffins with silky hollandaise sauce.", price: 22, category: "Breakfast"},
+    {id: 25, name: "Heritage Grain Oatmeal", description: "Warm steel-cut oats topped with seasonal fruit, toasted almonds, and a drizzle of maple syrup.", price: 12, category: "Breakfast"},
+    {id: 26, name: "Grilled Vegetable Panini", description: "Zucchini, eggplant, roasted peppers, and mozzarella pressed on artisan bread with pesto.", price: 18, category: "Lunch"},
+    {id: 27, name: "Lemon Herb Chicken Bowl", description: "Grilled chicken served over quinoa with roasted vegetables and a light lemon tahini dressing.", price: 20, category: "Lunch"},
+    {id: 28, name: "Seared Tuna Salad", description: "Sesame-crusted tuna over mixed greens with avocado, cucumber, and soy-ginger vinaigrette.", price: 27, category: "Lunch"},
+    {id: 29, name: "Braised Short Ribs", description: "Slow-braised beef short ribs served with creamy polenta and roasted root vegetables.", price: 38, category: "Dinner"},
+    {id: 30, name: "Lobster Ravioli", description: "House-made ravioli filled with lobster, served in a light saffron cream sauce.", price: 36, category: "Dinner"},
+    {id: 31, name: "Vegetable Wellington", description: "Seasonal vegetables wrapped in flaky pastry served with a red wine reduction.", price: 28, category: "Dinner"},
+    {id: 32, name: "Salted Caramel Tart", description: "Buttery tart shell filled with rich caramel and topped with a touch of sea salt.", price: 13, category: "Dessert"},
+    {id: 33, name: "Berry Pavlova", description: "Crisp meringue layered with whipped cream and fresh seasonal berries.", price: 15, category: "Dessert"},
+    {id: 34, name: "Affogato al Caffe", description: "Vanilla gelato topped with a shot of hot espresso and shaved dark chocolate.", price: 11, category: "Dessert"}
 
 ];
 
@@ -50,7 +65,6 @@ function populateMenu(category, tableBodyId) {
         const nameCell = document.createElement("td");
         nameCell.classList.add("item-name");
         nameCell.textContent = item.name;
-        const namesomething = document.crea
         const priceCell = document.createElement("td");
         priceCell.classList.add("price");
         priceCell.textContent = `$${item.price}`;
