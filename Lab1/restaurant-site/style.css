@@ -164,8 +164,8 @@ nav > a:hover {
     display: block;
 }
 
-#left-block {
-
+.center-content {
+    align-content: center;
 }
 
 .img-standard {
