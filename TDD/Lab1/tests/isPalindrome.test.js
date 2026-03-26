@@ -10,7 +10,7 @@ describe("Edge Cases", () => {
     });
 });
 
-describe("Palindrome Test Cases", () => {
+describe("Valid Palindrome Test Cases", () => {
     test('returns true for a palindrome', () => {
         expect(isPalindrome("bob")).toBe(true);
     });
@@ -32,6 +32,8 @@ describe("Edge Palindrome Test Cases", () => {
     });
     test('return true for a palindrome with punctuation', () => {
         expect(isPalindrome("Racecar!")).toBe(true);
+    });
+    test('return true for a long palindrome with spaces and punctuation', () => {
         expect(isPalindrome("Doc, note: I dissent. A fast never prevents a fatness. I diet on cod")).toBe(true);
     });
 
