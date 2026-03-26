@@ -40,5 +40,7 @@ describe("Edge Palindrome Test Cases", () => {
 describe("Non-String inputs", () => {
     test('return false if input not a string', () => {
         expect(isPalindrome(121)).toBe(false);
+        expect(isPalindrome(null)).toBe(false);
+        expect(isPalindrome(true)).toBe(false);
     });
 })
