@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM - Demo 1</title>
+</head>
+<body>
+<!--    <h1>Avengers</h1>-->
+<!--    <h1>X-Men</h1>-->
+<!--    <ul>-->
+<!--        <li id="teamLeader">Wolverine</li>-->
+<!--        <li class="mutant">Cyclops</li>-->
+<!--        <li class="mutant">ShadowCat</li>-->
+<!--    </ul>-->
+
+    <h1>X-Men Roster Application</h1>
+    <form action="/cerebro">
+        <label for="first_name">First Name:</label>
+        <input type="text" name="fname" id="first_name">
+        <br>
+        <label for="pw">Password: </label>
+        <input type="password" name="pw" id="pw">
+        <br>
+        <label for="isAliveYes">Are you alive?</label>
+        <input type="radio" name = "isAlive" id="isAliveYes" value="yes">
+        <input type="radio" name = "isAlive" id="isAliveNo" value="no">
+        <input type="radio" name = "isAlive" id="isAliveZom" value="zombie">
+
+        <br/><br />
+        <button type="submit">Join Team</button>
+    </form>
+    <script>
+        // let xmenTeamLeader = document.getElementById("teamLeader");
+        // console.log(xmenTeamLeader);
+        // let mutants = document.getElementsByClassName("mutant");
+        // console.log(mutants)
+        // let allXmen = document.getElementsByTagName("li");
+        // console.log(allXmen);
+        // //
+        // // let selectedXmen = document.querySelector(".mutant");
+        // // console.log(selectedXmen);
+        //
+        // let allTeams = document.querySelectorAll("h1");
+        // // console.log(allTeams);
+        //
+        // // allTeams[0].style.color = "red";
+        // // allTeams[0].style.border = "green 3px solid";
+        // // allTeams[0].style.fontSize = "48px";
+        // // let teamContent = allTeams[0].textContent;
+        // // console.log(teamContent);
+        // // allTeams[1].textContent = "New Mutants";
+        //
+        // let teamContent = allTeams[0].innerHTML;
+        // console.log(teamContent);
+        // allTeams[1].innerHTML = "<b>X-Factor</b>";
+         const rosterHeader = document.querySelector("h1");
+
+         rosterHeader.addEventListener("click", (event)=>{
+             console.log("You clicked the h1.");
+
+             rosterHeader.textContent = "Avengers Assemble!";
+         })
+
+        const form = document.getElementsByTagName("form");
+         form[0].addEventListener("submit", (event) => {
+             event.preventDefault();
+             let firstName = document.getElementById("first_name");
+             let password = document.getElementById("pw");
+             let isAlive = document.querySelector('input[name="isAlive"]:checked');
+             console.log("Submitted");
+             console.log("Value from first name input: ", firstName.value, password.value, isAlive.value)
+             let newData = {
+                 fname: firstName.value,
+                 password: password.value,
+                 isAlive: isAlive.value
+             }
+
+             console.log(JSON.stringify(newData));
+        });
+
+
+    </script>
+
+
+
+</body>
+</html>
