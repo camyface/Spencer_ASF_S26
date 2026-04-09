@@ -1,0 +1,6 @@
+const GalleryCard = () => {
+    return (
+        <>
+        </>
+    )
+}

@@ -1,0 +1,7 @@
+const SectionDivider = () => {
+    return (
+        <>
+
+        </>
+    )
+}
