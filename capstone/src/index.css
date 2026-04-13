@@ -161,3 +161,80 @@ code {
 .custom-navbar .nav-link:hover {
   color: #c2a878; /* gold accent */
 }
+
+
+body {
+  background-color: #f7f4ee;
+  color: #2b2b2b;
+}
+
+.section-row {
+  padding: 3rem 1rem;
+}
+
+.section-image-col,
+.section-text-col {
+  padding: 1rem;
+}
+
+.mini-header {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f3d2b;
+  margin-bottom: 1.25rem;
+}
+
+.section-text-col p {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #3a3a3a;
+}
+
+.img-standard {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.menu-button {
+  background-color: #1f3d2b !important;
+  border: none !important;
+  color: #f7f4ee !important;
+  padding: 0.7rem 1.5rem !important;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 600 !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+}
+
+.menu-button:hover {
+  background-color: #2b5139 !important;
+}
+
+.divider-row {
+  margin: 0.5rem 0 1rem;
+}
+
+.card-divider {
+  border-top: 1px solid rgba(31, 61, 43, 0.2);
+}
+
+@media (max-width: 767.98px) {
+  .section-row {
+    padding: 2rem 1rem;
+  }
+
+  .mini-header {
+    font-size: 1.7rem;
+    margin-top: 1rem;
+  }
+
+  .img-standard {
+    max-height: 320px;
+  }
+}
