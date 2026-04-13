@@ -1,7 +1,0 @@
-const FeatureSection = () => {
-    return (
-        <>
-
-        </>
-    )
-}

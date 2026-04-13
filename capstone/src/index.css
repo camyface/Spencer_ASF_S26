@@ -109,3 +109,55 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+/*////////////////////////////////////////////////////////////////////////////////////////////*/
+:root {
+  /*Colors */
+
+  --deep-forest: #0F2A1D; /*background/header*/
+  --sandstone: #E8E1D6; /*various*/
+  --ivory: #FAF7F2;  /*text, backgrounds*/
+  --gold-accent: #C8A96A;  /*borders, dividers, and hover fills*/
+  --charcoal: #1A1A1A;  /*text*/
+}
+
+.playfair-display {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.source-sans-3 {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+
+.cormorant-garamond {
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+
+.custom-navbar {
+  background-color: #1f3d2b; /* forest green */
+}
+
+.custom-navbar .navbar-brand {
+  color: #f5f5dc; /* soft beige */
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.custom-navbar .nav-link {
+  color: #e0e0e0;
+  font-family: 'Playfair Display', serif;
+  font-weight: bolder;
+
+}
+
+.custom-navbar .nav-link:hover {
+  color: #c2a878; /* gold accent */
+}

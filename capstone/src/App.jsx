@@ -6,7 +6,6 @@ const App = () => {
   return (
       <>
         <MyNavbar></MyNavbar>
-        <h1>Arbor Oasis</h1>
       </>
   )
 }
