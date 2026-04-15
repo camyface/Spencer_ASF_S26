@@ -238,3 +238,232 @@ body {
     max-height: 320px;
   }
 }
+
+.add-icon {
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.add-icon:hover {
+  color: #1f3d2b;
+  transform: scale(1.1);
+}
+
+/* =========================
+   MENU PAGE STYLES
+   ========================= */
+
+.header-divider {
+  border-bottom: 2px solid var(--gold-accent);
+}
+
+.div-block {
+  display: flex;
+  margin: 40px 20px;
+}
+
+.div-block-content {
+  flex: 1;
+  text-align: center;
+  margin: 30px 20px;
+}
+
+.menu-intro {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: var(--charcoal);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.menu-filter-row {
+  margin-bottom: 2rem;
+}
+
+.menu-filter-row .dropdown-toggle.menu-button {
+  background-color: var(--deep-forest) !important;
+  color: var(--ivory) !important;
+  border: 2px solid var(--gold-accent) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.menu-filter-row .dropdown-toggle.menu-button:hover,
+.menu-filter-row .dropdown-toggle.menu-button:focus,
+.menu-filter-row .dropdown-toggle.menu-button:active,
+.menu-filter-row .show > .dropdown-toggle.menu-button {
+  background-color: var(--gold-accent) !important;
+  color: var(--deep-forest) !important;
+  border-color: var(--gold-accent) !important;
+}
+
+.menu-filter-row .dropdown-menu {
+  border: 1px solid var(--gold-accent);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.menu-filter-row .dropdown-item {
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.menu-filter-row .dropdown-item:hover,
+.menu-filter-row .dropdown-item:focus {
+  background-color: var(--sandstone);
+  color: var(--deep-forest);
+}
+
+.menu-table {
+  background-color: var(--sandstone);
+  width: 70%;
+  margin: 60px auto;
+  border-collapse: collapse;
+}
+
+.menu-table td,
+.menu-table th {
+  background-color: var(--sandstone) !important;
+  vertical-align: top;
+}
+
+.menu-table td {
+  padding: 8px 0;
+}
+
+.menu-header {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  text-align: left;
+  padding-bottom: 20px !important;
+  border-bottom: 2px solid var(--gold-accent);
+}
+
+.item-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: var(--charcoal);
+  padding-top: 20px !important;
+  text-align: left;
+}
+
+.item-price {
+  text-align: right;
+  color: var(--charcoal);
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 600;
+  white-space: nowrap;
+  width: 110px;
+}
+
+.item-qty {
+  width: 90px;
+}
+
+.item-qty .form-select {
+  font-family: "Source Sans 3", sans-serif;
+  border: 1px solid var(--gold-accent);
+  background-color: var(--ivory);
+}
+
+.item-add {
+  width: 50px;
+  text-align: right;
+}
+
+.item-description {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--charcoal);
+  text-align: left;
+  padding-bottom: 20px !important;
+  border-bottom: 1px solid var(--gold-accent);
+}
+
+.add-icon {
+  color: var(--deep-forest);
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.add-icon:hover {
+  color: #28a745;
+  transform: scale(1.2);
+}
+
+.add-icon:active {
+  transform: scale(0.9);
+  color: #1e7e34;
+}
+
+.menu-image-wrapper {
+  text-align: center;
+  margin: 2rem 0 4rem;
+}
+
+.menu-image {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.cart-toast-link {
+  color: var(--ivory);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.cart-toast-link:hover {
+  color: var(--sandstone);
+}
+
+@media (max-width: 991.98px) {
+  .menu-table {
+    width: 88%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .div-block {
+    margin: 20px 10px;
+  }
+
+  .div-block-content {
+    margin: 20px 10px;
+  }
+
+  .menu-intro {
+    font-size: 1.25rem;
+  }
+
+  .menu-table {
+    width: 100%;
+    margin: 40px auto;
+  }
+
+  .menu-header {
+    font-size: 1.6rem;
+  }
+
+  .item-name {
+    font-size: 1rem;
+  }
+
+  .item-description {
+    font-size: 1.05rem;
+  }
+
+  .item-price {
+    width: 80px;
+  }
+
+  .item-qty {
+    width: 76px;
+  }
+
+  .menu-image {
+    max-width: 300px;
+  }
+}
