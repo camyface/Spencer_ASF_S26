@@ -19,7 +19,7 @@
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
-  background: var(--bg);
+  background: var(--sandstone);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -52,6 +52,8 @@
 
 body {
   margin: 0;
+  background-color: var(--sandstone);
+  color: var(--charcoal);
 }
 
 #root {
@@ -60,6 +62,7 @@ body {
   margin: 0 auto;
   text-align: center;
   border-inline: 1px solid var(--border);
+  background-color: var(--sandstone);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -163,10 +166,7 @@ code {
 }
 
 
-body {
-  background-color: #f7f4ee;
-  color: #2b2b2b;
-}
+
 
 .section-row {
   padding: 3rem 1rem;
