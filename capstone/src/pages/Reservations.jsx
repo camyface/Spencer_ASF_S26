@@ -1,15 +1,24 @@
-import {useForm} from "react-hook-form";
+import { useState } from "react";
+import { Container, Row, Col, Form, Button, Modal } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 import {object, string, number, date, boolean} from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const Reservations = () => {
+    const [showModal, setShowModal] = useState(false);
+    const [submittedReservation, setSubmittedReservation] = useState(null);
+
     const formSchema = object({
         full_name: string()
             .max(20, "Maximum of 20 characters.")
             .required("This field is required."),
 
         email: string()
-            .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "Invalid email format.")
+            .transform((value) => value?.toLowerCase())
+            .matches(
+                /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                "Invalid email format."
+            )
             .required("This field is required."),
 
         party_size: number()
@@ -18,160 +27,258 @@ const Reservations = () => {
             .min(1, "1 person required at minimum.")
             .max(8, "Maximum party size of 8."),
 
-        date: date()
-            .required("This field is required."),
+        date: date().required("This field is required."),
 
-        time: string()
-            .required("This field is required."),
+        time: string().required("This field is required."),
 
         dietary_restrictions: string()
             .optional()
             .max(30, "Cannot exceed 30 characters."),
 
-        seating: string(),
+        seating: string().required("Please select a seating preference."),
 
-        newsletter: string()
-            .optional()
-
-    })
+        newsletter: boolean().optional(),
+    });
 
     const {
         register,
         handleSubmit,
-        setValue,
         reset,
-        formState: {errors}
-
+        formState: { errors },
     } = useForm({
-        resolver: yupResolver(formSchema)
+        resolver: yupResolver(formSchema),
+        defaultValues: {
+            newsletter: false
+        }
     });
 
     const onSubmit = (data) => {
-        console.log(data);
+        setSubmittedReservation(data);
+        setShowModal(true);
         reset();
-    }
+    };
 
-    const handleChange = (event) => {
-        console.log(`${event.target.name}: ${event.target.value}`);
-        setValue(event.target.name, event.target.value);
-    }
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
 
 
     return (
         <>
-            <h1>This is Reservations</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <label htmlFor="">Full Name:
-                    <input
-                        type="text"
-                        {...register("full_name")}
-                        id={"full_name"}
-                        onChange={handleChange}
-                    />
-                    {errors.full_name && <span> {errors.full_name.message} </span>}
+            <Container className="py-5">
+                <Row className="justify-content-center">
+                    <Col md={10} lg={8}>
+                        <div className="reservation-card p-4 rounded-4 shadow-sm">
+                            <h1 className="mb-4 text-center">Reservations</h1>
 
-                </label>
-                <br/>
-                <label htmlFor="">Email:
-                    <input
-                        type="text"
-                        {...register("email")}
-                        id={"email"}
-                        onChange={handleChange}
-                    />
-                    {errors.email && <span> {errors.email.message} </span>}
+                            <Form onSubmit={handleSubmit(onSubmit)}>
+                                <Row className="g-3">
+                                    <Col md={12}>
+                                        <Form.Group controlId="full_name">
+                                            <Form.Label>Full Name</Form.Label>
+                                            <Form.Control
+                                                type="text"
+                                                {...register("full_name")}
+                                                isInvalid={!!errors.full_name}
+                                            />
+                                            <Form.Control.Feedback type="invalid">
+                                                {errors.full_name?.message}
+                                            </Form.Control.Feedback>
+                                        </Form.Group>
+                                    </Col>
 
-                </label>
-                <br/>
-                <label htmlFor="">Party Size:
-                    <input
-                        type="number"
-                        {...register("party_size")}
-                        id={"party_size"}
-                        onChange={handleChange}
-                    />
-                    {errors.party_size && <span> {errors.party_size.message} </span>}
+                                    <Col md={12}>
+                                        <Form.Group controlId="email">
+                                            <Form.Label>Email</Form.Label>
+                                            <Form.Control
+                                                type="email"
+                                                {...register("email")}
+                                                isInvalid={!!errors.email}
+                                            />
+                                            <Form.Control.Feedback type="invalid">
+                                                {errors.email?.message}
+                                            </Form.Control.Feedback>
+                                        </Form.Group>
+                                    </Col>
 
-                </label>
-                <br/>
-                <label htmlFor="">Date:
-                    <input
-                        type="date"
-                        {...register("date")}
-                        id={""}
-                        onChange={handleChange}
-                    />
-                    {errors.date && <span> {errors.date.message} </span>}
+                                    <Col md={6}>
+                                        <Form.Group controlId="party_size">
+                                            <Form.Label>Party Size</Form.Label>
+                                            <Form.Control
+                                                type="number"
+                                                {...register("party_size")}
+                                                isInvalid={!!errors.party_size}
+                                            />
+                                            <Form.Control.Feedback type="invalid">
+                                                {errors.party_size?.message}
+                                            </Form.Control.Feedback>
+                                        </Form.Group>
+                                    </Col>
 
-                </label>
-                <br/>
-                <label htmlFor="">Time:
-                    <input
-                        type="time"
-                        {...register("time")}
-                        id={"time"}
-                        onChange={handleChange}
-                    />
-                    {errors.time && <span> {errors.time.message} </span>}
+                                    <Col md={6}>
+                                        <Form.Group controlId="date">
+                                            <Form.Label>Date</Form.Label>
+                                            <Form.Control
+                                                type="date"
+                                                {...register("date")}
+                                                isInvalid={!!errors.date}
+                                            />
+                                            <Form.Control.Feedback type="invalid">
+                                                {errors.date?.message}
+                                            </Form.Control.Feedback>
+                                        </Form.Group>
+                                    </Col>
 
-                </label>
-                <br/>
-                <label htmlFor="">Dietary Restrictions:
-                    <input
-                        type="textbox"
-                        {...register("dietary_restrictions")}
-                        id={"dietary_restrictions"}
-                        onChange={handleChange}
-                    />
-                    {errors.dietary_restrictions && <span> {errors.dietary_restrictions.message} </span>}
+                                    <Col md={6}>
+                                        <Form.Group controlId="time">
+                                            <Form.Label>Time</Form.Label>
+                                            <Form.Control
+                                                type="time"
+                                                {...register("time")}
+                                                isInvalid={!!errors.time}
+                                            />
+                                            <Form.Control.Feedback type="invalid">
+                                                {errors.time?.message}
+                                            </Form.Control.Feedback>
+                                        </Form.Group>
+                                    </Col>
 
-                </label>
-                <br/>
-                <fieldset>
-                    <legend>Seating Preference:</legend>
+                                    <Col md={6}>
+                                        <Form.Group controlId="dietary_restrictions">
+                                            <Form.Label>Dietary Restrictions</Form.Label>
+                                            <Form.Control
+                                                type="text"
+                                                {...register("dietary_restrictions")}
+                                                isInvalid={!!errors.dietary_restrictions}
+                                            />
+                                            <Form.Control.Feedback type="invalid">
+                                                {errors.dietary_restrictions?.message}
+                                            </Form.Control.Feedback>
+                                        </Form.Group>
+                                    </Col>
 
-                    <label>
-                        <input type="radio" value="bar" defaultChecked={true} {...register("seating")} />
-                        Bar
-                    </label>
+                                    <Col md={12}>
+                                        <Form.Group>
+                                            <Form.Label className="d-block">
+                                                Seating Preference
+                                            </Form.Label>
 
-                    <label>
-                        <input type="radio" value="patio" {...register("seating")} />
-                        Patio
-                    </label>
+                                            <Form.Check
+                                                inline
+                                                type="radio"
+                                                label="Bar"
+                                                value="bar"
+                                                {...register("seating")}
+                                                id="seating-bar"
+                                                defaultChecked
+                                            />
+                                            <Form.Check
+                                                inline
+                                                type="radio"
+                                                label="Patio"
+                                                value="patio"
+                                                {...register("seating")}
+                                                id="seating-patio"
+                                            />
+                                            <Form.Check
+                                                inline
+                                                type="radio"
+                                                label="Dining Room"
+                                                value="dining_room"
+                                                {...register("seating")}
+                                                id="seating-dining-room"
+                                            />
 
-                    <label>
-                        <input type="radio" value="dining_room" {...register("seating")} />
-                        Dining Room
-                    </label>
-                </fieldset>
+                                            {errors.seating && (
+                                                <div className="text-danger mt-1">
+                                                    {errors.seating.message}
+                                                </div>
+                                            )}
+                                        </Form.Group>
+                                    </Col>
 
-                {errors.seating && <span>{errors.seating.message}</span>}
+                                    <Col md={12}>
+                                        <Form.Group>
+                                            <Form.Label className="d-block">
+                                                Subscribe to Our Newsletter
+                                            </Form.Label>
 
-                {errors.seating && <span>{errors.seating.message}</span>}
-                <br/>
-                <fieldset>
-                    <legend>Subscribe to Our Newsletter:</legend>
+                                            <Form.Check
+                                                type="checkbox"
+                                                // label="Subscribe to our newsletter"
+                                                value=""
+                                                {...register("newsletter")}
+                                                id="newsletter"
+                                            />
 
-                    <label>
-                        <input
-                            type="checkbox"
-                            value="yes"
-                            {...register("newsletter")}
-                        />
-                        Yes
-                    </label>
+                                            {errors.newsletter && (
+                                                <div className="text-danger mt-1">
+                                                    {errors.newsletter.message}
+                                                </div>
+                                            )}
+                                        </Form.Group>
+                                    </Col>
 
-                    {errors.newsletter && (
-                        <span>{errors.newsletter.message}</span>
+                                    <Col md={12} className="d-flex gap-2 justify-content-center mt-3">
+                                        <Button type="submit" className="menu-button">
+                                            Submit
+                                        </Button>
+                                        <Button
+                                            type="button"
+                                            variant="outline-secondary"
+                                            onClick={() => reset()}
+                                        >
+                                            Reset
+                                        </Button>
+                                    </Col>
+                                </Row>
+                            </Form>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+
+            <Modal show={showModal} onHide={handleCloseModal} centered>
+                <Modal.Header closeButton>
+                    <Modal.Title>Reservation Confirmed</Modal.Title>
+                </Modal.Header>
+
+                <Modal.Body>
+                    <h4>Thank you for your reservation.</h4>
+
+                    {submittedReservation && (
+                        <div className="mt-3">
+                            <p><strong>Name:</strong> {submittedReservation.full_name}</p>
+                            <p><strong>Email:</strong> {submittedReservation.email}</p>
+                            <p><strong>Party Size:</strong> {submittedReservation.party_size}</p>
+                            <p>
+                                <strong>Date:</strong>{" "}
+                                {submittedReservation.date instanceof Date
+                                    ? submittedReservation.date.toLocaleDateString()
+                                    : submittedReservation.date}
+                            </p>                            <p><strong>Time:</strong> {submittedReservation.time}</p>
+                            <p><strong>Seating:</strong> {submittedReservation.seating}</p>
+                            <p>
+                                <strong>Dietary Restrictions:</strong>{" "}
+                                {submittedReservation.dietary_restrictions || "None"}
+                            </p>
+                            <p>
+                                <strong>Newsletter:</strong>{" "}
+                                {submittedReservation.newsletter ? "Yes" : "No"}
+                            </p>
+                        </div>
                     )}
-                </fieldset>
-                <br/>
-                <button type={"submit"}>Submit</button>
-                <button type={"reset"}>Reset</button>
-            </form>
+                </Modal.Body>
+
+                <Modal.Footer>
+                    <Button className="menu-button" onClick={handleCloseModal}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
-    )
-}
+    );
+};
 
 export default Reservations;
