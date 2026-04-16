@@ -1,4 +1,5 @@
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Button, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const HomeSection = ({
                          title,
@@ -15,7 +16,7 @@ const HomeSection = ({
                 <Col
                     xs={12}
                     md={6}
-                    className={`div-block-content section-image-col ${
+                    className={`section-image-col ${
                         imageLeft ? "order-1 order-md-1" : "order-1 order-md-2"
                     }`}
                 >
@@ -25,7 +26,7 @@ const HomeSection = ({
                 <Col
                     xs={12}
                     md={6}
-                    className={`div-block-content section-text-col ${
+                    className={`section-text-col ${
                         imageLeft ? "order-2 order-md-2" : "order-2 order-md-1"
                     }`}
                 >
@@ -33,7 +34,7 @@ const HomeSection = ({
                     <p>{text}</p>
 
                     {buttonText && buttonLink && (
-                        <Button href={buttonLink} className="menu-button">
+                        <Button as={Link} to={buttonLink} className="menu-button">
                             {buttonText}
                         </Button>
                     )}

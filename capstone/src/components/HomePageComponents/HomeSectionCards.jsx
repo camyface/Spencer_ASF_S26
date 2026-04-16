@@ -1,9 +1,10 @@
+import { Container } from "react-bootstrap";
 import HomeSection from "./HomeSection";
 import { homeSections } from "../../data/homeSections.js";
 
-const HomeSections = () => {
+const HomeSectionCards = () => {
     return (
-        <>
+        <Container>
             {homeSections.map((section, index) => (
                 <HomeSection
                     key={section.id}
@@ -11,8 +12,8 @@ const HomeSections = () => {
                     imageLeft={index % 2 === 1}
                 />
             ))}
-        </>
+        </Container>
     );
 };
 
-export default HomeSections;
+export default HomeSectionCards;

@@ -4,9 +4,10 @@ import HomeSectionCards from "../components/HomePageComponents/HomeSectionCards.
 const Home = () => {
     return (
         <>
-            <HeroVideo/>
-            <HomeSectionCards></HomeSectionCards>
+            <HeroVideo />
+            <HomeSectionCards />
         </>
-    )
-}
+    );
+};
+
 export default Home;

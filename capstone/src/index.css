@@ -467,3 +467,26 @@ code {
     max-width: 300px;
   }
 }
+
+
+.section-image-col,
+.section-text-col {
+  padding: 1rem;
+}
+
+.section-text-col {
+  text-align: center;
+}
+
+.section-text-col p {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #3a3a3a;
+}
+
+.section-image-col img {
+  display: block;
+  width: 100%;
+}

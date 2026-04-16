@@ -3,7 +3,6 @@ import {
     Col,
     Container,
     Dropdown,
-    DropdownButton,
     Row,
     Toast,
     ToastContainer,
@@ -34,6 +33,15 @@ const MenuPage = () => {
     };
 
     const visibleKeys = filter === "all" ? Object.keys(menuData) : [filter];
+
+    const filterLabel = {
+        all: "Menu",
+        breakfast: "Breakfast",
+        lunch: "Lunch",
+        appetizer: "Appetizer",
+        dinner: "Dinner",
+        dessert: "Desserts",
+    };
 
     return (
         <>
@@ -71,19 +79,20 @@ const MenuPage = () => {
 
                 <Row className="justify-content-center menu-filter-row">
                     <Col xs="auto">
-                        <DropdownButton
-                            id="menu-filter"
-                            title="Menu"
-                            className="text-center"
-                            menuVariant="light"
-                        >
-                            <Dropdown.Item onClick={() => setFilter("all")}>All</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setFilter("breakfast")}>Breakfast</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setFilter("lunch")}>Lunch</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setFilter("appetizer")}>Appetizer</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setFilter("dinner")}>Dinner</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setFilter("dessert")}>Desserts</Dropdown.Item>
-                        </DropdownButton>
+                        <Dropdown>
+                            <Dropdown.Toggle id="menu-filter" className="menu-button">
+                                {filterLabel[filter]}
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                                <Dropdown.Item onClick={() => setFilter("all")}>All</Dropdown.Item>
+                                <Dropdown.Item onClick={() => setFilter("breakfast")}>Breakfast</Dropdown.Item>
+                                <Dropdown.Item onClick={() => setFilter("lunch")}>Lunch</Dropdown.Item>
+                                <Dropdown.Item onClick={() => setFilter("appetizer")}>Appetizer</Dropdown.Item>
+                                <Dropdown.Item onClick={() => setFilter("dinner")}>Dinner</Dropdown.Item>
+                                <Dropdown.Item onClick={() => setFilter("dessert")}>Desserts</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
                     </Col>
                 </Row>
             </Container>
